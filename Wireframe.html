@@ -4,90 +4,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+   body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header {
-      background-color: #333;
-      color: #fff;
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav {
+  background-color: #555;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+  margin: 0 1rem;
+}
+
+.hero-section {
+  background-color: #777; /* Grayscale equivalent of #3498db */
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.media-section {
+  background-color: #444; /* Grayscale equivalent of #e74c3c */
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background-color: #777; /* Grayscale equivalent of #3498db */
+  color: #fff;
+}
+
+.contact-form {
+  background-color: #777; /* Grayscale equivalent of #e91e63 */
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 0.5rem;
+  }
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.contact-form button {
+  background-color: #fff;
+  color: #444; /* Grayscale equivalent of #e91e63 */
+  padding: 0.5rem;
+  cursor: pointer;
+  border: 1px solid #777; /* Grayscale equivalent of #e91e63 */
+  border-radius: 5px;
+}
+
+.media-section iframe {
+  width: 100%;
+  height: 300px;
+  filter: grayscale(100%); /* Convert the video to grayscale */
+}
+
+
+ /* Previous styles... */
+
+ .cta-section {
+      background-color: #ddd; /* Grayscale equivalent of #3498db */
+      color: #000;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem;
     }
 
-    nav {
+    .cta {
+      margin: 1rem;
+      padding: 1.5rem;
       background-color: #555;
-      padding: 0.5rem;
-      text-align: center;
-    }
-
-    nav a {
       color: #fff;
       text-decoration: none;
-      padding: 1rem;
-      margin: 0 1rem;
+      display: inline-block;
+      border-radius: 5px;
     }
 
-    .hero-section {
-      background-color: #3498db;
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .media-section {
-      background-color: #e74c3c;
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    table, th, td {
-      border: 1px solid #ddd;
-    }
-
-    th, td {
-      padding: 0.5rem;
-      text-align: left;
-    }
-
-    th {
-      background-color: #3498db;
-      color: #fff;
-    }
-
-    .contact-form {
-      background-color: #e91e63;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    footer {
+    .cta:hover {
       background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        margin: 0.5rem;
-      }
     }
   </style>
   <title>Responsive Wireframe</title>
@@ -111,7 +163,15 @@
 
   <div class="media-section">
     <h2>Media Section</h2>
-    <p>This is your media section content.</p>
+    <!-- Example YouTube video -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="cta-section">
+    <h2>Call to Action</h2>
+    <a href="#" class="cta">CTA 1</a>
+    <a href="#" class="cta">CTA 2</a>
+    <a href="#" class="cta">CTA 3</a>
   </div>
 
   <section>
@@ -141,7 +201,18 @@
 
   <div class="contact-form">
     <h2>Contact Form</h2>
-    <p>This is your contact form section.</p>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
 
   <footer>
